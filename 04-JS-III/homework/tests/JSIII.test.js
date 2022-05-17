@@ -167,6 +167,7 @@ describe('mesesDelAño(array)', function() {
   });
 });
 
+
 describe('mayorACien(array)', function() {
   it('should return an array with values grater than 100', function() {
     var integers = [100, 4, 56, 78, 200, 120, 7, 160, 148, 22];

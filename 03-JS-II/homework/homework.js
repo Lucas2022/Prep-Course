@@ -29,15 +29,12 @@ function conection(status) {
   //Cuando el estado es igual a 2, el usuario está "Away"
   //De lo contrario, presumimos que el usuario está "Offline"
   //Devolver el estado de conexión de usuario en cada uno de los casos.
-  const esta = status;
-  switch (esta) {
-    case 1:
-      return "Online";
-    case 2:
-      return "Away";
-    default:
-      return "Offline";
+  if (status === 1) {
+    return "Online";
+  } else if (status === 2) {
+    return "Away";
   }
+  return "Offline";
 }
 
 function saludo(idioma) {
@@ -47,8 +44,8 @@ function saludo(idioma) {
   // Si "idioma" es "ingles", devuelve "Hello!"
   // Si "idioma" no es ninguno de los anteiores o es `undefined` devuelve "Hola!"
   // Tu código:
-  const saludo = idioma;
-  switch (saludo) {
+  const elIdioma = idioma;
+  switch (elIdioma) {
     case "aleman":
       return "Guten Tag!";
     case "mandarin":
@@ -146,10 +143,11 @@ function operadoresLogicos(num1, num2, num3) {
   } else if ((num1 > num2) && (num1 > num3)) {
     return "Número 1 es mayor y positivo";
   } else if ((num3 > num1) && (num3 > num2)) {
-    var extra = num3 + 1;
-    return extra;
+    var valor = num3 + 1;
+    return valor;
   }
   return false;
+
 }
 
 function esPrimo(numero) {
@@ -158,7 +156,7 @@ function esPrimo(numero) {
   // Pista: un número primo solo es divisible por sí mismo y por 1
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
-  if ((numero === 0) || (numero === 1)) {
+  if ((numero === 1) || (numero === 0)) {
     return false;
   }
   valor = true;
@@ -175,8 +173,7 @@ function esVerdadero(valor) {
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
-  var miValor = valor;
-  if (miValor) {
+  if (valor) {
     return "Soy verdadero";
   }
   return "Soy falso";
@@ -185,24 +182,20 @@ function esVerdadero(valor) {
 function tablaDelSeis() {
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
-  //Escribe tu código aquí   
-  const unArray = [];
+  //Escribe tu código aquí
+  const soyArray = [];
   for (var i = 0; i < 61; i++) {
     if (i % 6 === 0) {
-      unArray.push(i);
+      soyArray.push(i);
     }
-  }
-  return unArray;
-
+  } return soyArray;
 }
 
 function tieneTresDigitos(numero) {
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-
-  var auxiliar = numero;
-  var cantidad = auxiliar.toString().length;
-  if (cantidad === 3) {
+  var convertido = numero.toString();
+  if (convertido.length === 3) {
     return true;
   }
   return false;
@@ -212,13 +205,13 @@ function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
-  var aux = numero;
-  var limite = 0;
+  limite = 0;
+  aumento = numero;
   do {
-    aux += 5;
+    aumento += 5;
     limite += 1;
   } while (limite !== 8);
-  return aux;
+  return aumento;
 }
 
 
